@@ -6,8 +6,7 @@ use App\Output\Concerns\InteractsWithSymbols;
 use PhpCsFixer\FixerFileProcessedEvent;
 use Symfony\Component\Console\Terminal;
 
-class ProgressOutput
-{
+class ProgressOutput {
 	use InteractsWithSymbols;
 
 	/**

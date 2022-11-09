@@ -1,7 +1,6 @@
 <?php
 
 return [
-
 	/*
 	|--------------------------------------------------------------------------
 	| Default Command
@@ -94,5 +93,4 @@ return [
 		Pest\Laravel\Commands\PestInstallCommand::class,
 		Pest\Laravel\Commands\PestTestCommand::class,
 	],
-
 ];

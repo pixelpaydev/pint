@@ -33,8 +33,7 @@ use SplFileInfo;
  * THE SOFTWARE.
  */
 
-class LaravelPhpdocAlignmentFixer implements FixerInterface
-{
+class LaravelPhpdocAlignmentFixer implements FixerInterface {
 	/**
 	 * {@inheritdoc}
 	 */
@@ -72,7 +71,7 @@ class LaravelPhpdocAlignmentFixer implements FixerInterface
 			$newContent = preg_replace_callback(
 				'/(?P<tag>@param)\s+(?P<hint>(?:'.TypeExpression::REGEX_TYPES.')?)\s+(?P<var>(?:&|\.{3})?\$\S+)/ux',
 				fn ($matches) => $matches['tag'].'  '.$matches['hint'].'  '.$matches['var'],
-				$tokens[$index]->getContent()
+				$tokens[$index]->getContent(),
 			);
 
 			if ($newContent == $tokens[$index]->getContent()) {

@@ -6,8 +6,7 @@ use Illuminate\Console\Command;
 use PhpCsFixer\Console\Report\FixReport;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class ElaborateSummary
-{
+class ElaborateSummary {
 	/**
 	 * Creates a new Elaborate Summary instance.
 	 *
@@ -41,7 +40,7 @@ class ElaborateSummary
 			0,
 			OutputInterface::VERBOSITY_VERBOSE <= $this->output->getVerbosity(),
 			$this->input->getOption('test'),
-			$this->output->isDecorated()
+			$this->output->isDecorated(),
 		);
 
 		if ($this->input->getOption('format')) {
@@ -69,12 +68,12 @@ class ElaborateSummary
 	{
 		$reporter = match ($format = $this->input->getOption('format')) {
 			'checkstyle' => new FixReport\CheckstyleReporter(),
-			'gitlab' => new FixReport\GitlabReporter(),
-			'json' => new FixReport\JsonReporter(),
-			'junit' => new FixReport\JunitReporter(),
-			'txt' => new FixReport\TextReporter(),
-			'xml' => new FixReport\XmlReporter(),
-			default => abort(1, sprintf('Format [%s] is not supported.', $format)),
+			'gitlab'     => new FixReport\GitlabReporter(),
+			'json'       => new FixReport\JsonReporter(),
+			'junit'      => new FixReport\JunitReporter(),
+			'txt'        => new FixReport\TextReporter(),
+			'xml'        => new FixReport\XmlReporter(),
+			default      => abort(1, sprintf('Format [%s] is not supported.', $format)),
 		};
 
 		$this->output->write($reporter->generate($summary));

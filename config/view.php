@@ -12,7 +12,7 @@ return [
 	|
 	*/
 
-	'cache' => false,
+	'cache'    => false,
 	'compiled' => realpath(sys_get_temp_dir()),
 
 	/*
@@ -29,5 +29,4 @@ return [
 	'paths' => [
 		resource_path('views'),
 	],
-
 ];

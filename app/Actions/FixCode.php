@@ -5,8 +5,7 @@ namespace App\Actions;
 use App\Factories\ConfigurationResolverFactory;
 use PhpCsFixer\Runner\Runner;
 
-class FixCode
-{
+class FixCode {
 	/**
 	 * Creates a new Fix Code instance.
 	 *
@@ -51,7 +50,7 @@ class FixCode
 			$resolver->isDryRun(),
 			$resolver->getCacheManager(),
 			$resolver->getDirectory(),
-			$resolver->shouldStopOnViolation()
+			$resolver->shouldStopOnViolation(),
 		))->fix();
 
 		return tap([$totalFiles, $changes], fn () => $this->progress->unsubscribe());

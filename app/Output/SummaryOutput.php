@@ -10,8 +10,7 @@ use PhpCsFixer\FixerFileProcessedEvent;
 use function Termwind\render;
 use function Termwind\renderUsing;
 
-class SummaryOutput
-{
+class SummaryOutput {
 	use InteractsWithSymbols;
 
 	/**
@@ -20,7 +19,7 @@ class SummaryOutput
 	 * @var array<string, string>
 	 */
 	protected $presets = [
-		'psr12' => 'PSR 12',
+		'psr12'   => 'PSR 12',
 		'laravel' => 'Laravel',
 		'symfony' => 'Symfony',
 	];
@@ -59,17 +58,17 @@ class SummaryOutput
 		render(
 			view('summary', [
 				'totalFiles' => $totalFiles,
-				'issues' => $issues,
-				'testing' => $summary->isDryRun(),
-				'preset' => $this->presets[$this->config->preset()],
+				'issues'     => $issues,
+				'testing'    => $summary->isDryRun(),
+				'preset'     => $this->presets[$this->config->preset()],
 			]),
 		);
 
 		foreach ($issues as $issue) {
 			render(view('issue.show', [
-				'issue' => $issue,
+				'issue'     => $issue,
 				'isVerbose' => $this->output->isVerbose(),
-				'testing' => $summary->isDryRun(),
+				'testing'   => $summary->isDryRun(),
 			]));
 
 			if ($this->output->isVerbose() && $issue->code()) {
@@ -97,13 +96,14 @@ class SummaryOutput
 				$file,
 				$this->getSymbol(FixerFileProcessedEvent::STATUS_FIXED),
 				$information,
-			));
+			))
+		;
 
 		return $issues->merge(
 			collect(
 				$this->errors->getInvalidErrors()
 				+ $this->errors->getExceptionErrors()
-				+ $this->errors->getLintErrors()
+				+ $this->errors->getLintErrors(),
 			)->map(fn ($error) => new Issue(
 				$path,
 				$error->getFilePath(),

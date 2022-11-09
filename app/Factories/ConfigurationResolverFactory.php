@@ -9,8 +9,7 @@ use PhpCsFixer\Config;
 use PhpCsFixer\Console\ConfigurationResolver;
 use PhpCsFixer\ToolInfo;
 
-class ConfigurationResolverFactory
-{
+class ConfigurationResolverFactory {
 	/**
 	 * The list of available presets.
 	 *
@@ -46,27 +45,27 @@ class ConfigurationResolverFactory
 			new Config('default'),
 			[
 				'allow-risky' => 'yes',
-				'config' => implode(DIRECTORY_SEPARATOR, [
+				'config'      => implode(DIRECTORY_SEPARATOR, [
 					dirname(__DIR__, 2),
 					'resources',
 					'presets',
 					sprintf('%s.php', $preset),
 				]),
-				'diff' => $output->isVerbose(),
-				'dry-run' => $input->getOption('test'),
-				'path' => $path,
-				'path-mode' => ConfigurationResolver::PATH_MODE_OVERRIDE,
+				'diff'       => $output->isVerbose(),
+				'dry-run'    => $input->getOption('test'),
+				'path'       => $path,
+				'path-mode'  => ConfigurationResolver::PATH_MODE_OVERRIDE,
 				'cache-file' => $localConfiguration->cacheFile() ?? implode(DIRECTORY_SEPARATOR, [
 					realpath(sys_get_temp_dir()),
 					md5(
 						app()->isProduction()
 						? implode('|', $path)
-						: (string) microtime()
+						: (string) microtime(),
 					),
 				]),
 				'stop-on-violation' => false,
-				'verbosity' => $output->getVerbosity(),
-				'show-progress' => 'true',
+				'verbosity'         => $output->getVerbosity(),
+				'show-progress'     => 'true',
 			],
 			Project::path(),
 			new ToolInfo(),

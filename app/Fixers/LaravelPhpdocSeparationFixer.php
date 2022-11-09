@@ -33,8 +33,7 @@ use SplFileInfo;
  * THE SOFTWARE.
  */
 
-class LaravelPhpdocSeparationFixer extends AbstractFixer
-{
+class LaravelPhpdocSeparationFixer extends AbstractFixer {
 	/**
 	 * Groups of tags that should be allowed to immediately follow each other.
 	 *
@@ -208,6 +207,7 @@ class LaravelPhpdocSeparationFixer extends AbstractFixer
 
 		return collect($this->groups)
 			->filter(fn ($group) => in_array($firstName, $group, true) && in_array($secondName, $group, true))
-			->isNotEmpty();
+			->isNotEmpty()
+		;
 	}
 }

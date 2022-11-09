@@ -2,7 +2,7 @@
 
 it('may fail with style issues', function () {
 	[$statusCode, $output] = run('default', [
-		'path' => base_path('tests/Fixtures/with-fixable-issues'),
+		'path'     => base_path('tests/Fixtures/with-fixable-issues'),
 		'--preset' => 'psr12',
 	]);
 
@@ -36,5 +36,6 @@ it('may pass', function () {
 
 	expect($statusCode)->toBe(0)
 		->and($output)
-		->toContain('PASS');
+		->toContain('PASS')
+	;
 });

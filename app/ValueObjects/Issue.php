@@ -6,8 +6,7 @@ use Illuminate\Support\Str;
 use NunoMaduro\Collision\Highlighter;
 use ReflectionClass;
 
-class Issue
-{
+class Issue {
 	/**
 	 * Creates a new Issue instance.
 	 *
@@ -20,7 +19,7 @@ class Issue
 		protected $path,
 		protected $file,
 		protected $symbol,
-		protected $payload
+		protected $payload,
 	) {
 		// ..
 	}
@@ -126,22 +125,26 @@ class Issue
 			$lines = collect($lines)->map(function ($line) {
 				if (str($line)->startsWith('[90;3m//-')) {
 					return str($line)
-						->replaceFirst('[90;3m//-', '');
+						->replaceFirst('[90;3m//-', '')
+					;
 				}
 
 				if (str($line)->startsWith('//-')) {
 					return str($line)
-						->replaceFirst('//-', '');
+						->replaceFirst('//-', '')
+					;
 				}
 
 				if (str($line)->startsWith('[90;3m//+')) {
 					return str($line)
-						->replaceFirst('[90;3m//+', '');
+						->replaceFirst('[90;3m//+', '')
+					;
 				}
 
 				if (str($line)->startsWith('//+')) {
 					return str($line)
-						->replaceFirst('//+', '');
+						->replaceFirst('//+', '')
+					;
 				}
 
 				return $line;

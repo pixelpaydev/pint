@@ -1,7 +1,6 @@
 <?php
 
 return [
-
 	/*
 	|--------------------------------------------------------------------------
 	| Application Name
@@ -59,5 +58,4 @@ return [
 		App\Providers\CommandsServiceProvider::class,
 		App\Providers\RepositoriesServiceProvider::class,
 	],
-
 ];

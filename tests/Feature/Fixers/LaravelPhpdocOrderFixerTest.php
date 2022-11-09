@@ -2,7 +2,7 @@
 
 it('fixes the code', function () {
 	[$statusCode, $output] = run('default', [
-		'path' => base_path('tests/Fixtures/fixers/laravel_phpdoc_order.php'),
+		'path'     => base_path('tests/Fixtures/fixers/laravel_phpdoc_order.php'),
 		'--preset' => 'laravel',
 	]);
 
@@ -18,5 +18,6 @@ it('fixes the code', function () {
   + * @return string
     */
 EOF,
-		);
+		)
+	;
 });

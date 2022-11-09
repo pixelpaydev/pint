@@ -13,8 +13,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
-class ActionsServiceProvider extends ServiceProvider
-{
+class ActionsServiceProvider extends ServiceProvider {
 	/**
 	 * Bootstrap any application services.
 	 *
@@ -42,7 +41,7 @@ class ActionsServiceProvider extends ServiceProvider
 					resolve(EventDispatcher::class),
 					resolve(InputInterface::class),
 					resolve(OutputInterface::class),
-				)
+				),
 			);
 		});
 
@@ -56,7 +55,7 @@ class ActionsServiceProvider extends ServiceProvider
 					resolve(ErrorsManager::class),
 					resolve(InputInterface::class),
 					resolve(OutputInterface::class),
-				)
+				),
 			);
 		});
 	}

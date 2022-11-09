@@ -2,7 +2,7 @@
 
 it('outputs checkstyle format', function () {
 	[$statusCode, $output] = run('default', [
-		'path' => base_path('tests/Fixtures/with-fixable-issues'),
+		'path'     => base_path('tests/Fixtures/with-fixable-issues'),
 		'--preset' => 'psr12',
 		'--format' => 'checkstyle',
 	]);
@@ -19,7 +19,7 @@ it('outputs checkstyle format', function () {
 
 it('outputs json format', function () {
 	[$statusCode, $output] = run('default', [
-		'path' => base_path('tests/Fixtures/with-fixable-issues'),
+		'path'     => base_path('tests/Fixtures/with-fixable-issues'),
 		'--preset' => 'psr12',
 		'--format' => 'json',
 	]);
@@ -35,7 +35,7 @@ it('outputs json format', function () {
 
 it('outputs xml format', function () {
 	[$statusCode, $output] = run('default', [
-		'path' => base_path('tests/Fixtures/with-fixable-issues'),
+		'path'     => base_path('tests/Fixtures/with-fixable-issues'),
 		'--preset' => 'psr12',
 		'--format' => 'xml',
 	]);
@@ -50,7 +50,7 @@ it('outputs xml format', function () {
 
 it('outputs junit format', function () {
 	[$statusCode, $output] = run('default', [
-		'path' => base_path('tests/Fixtures/with-fixable-issues'),
+		'path'     => base_path('tests/Fixtures/with-fixable-issues'),
 		'--preset' => 'psr12',
 		'--format' => 'junit',
 	]);
@@ -66,7 +66,7 @@ it('outputs junit format', function () {
 
 it('outputs gitlab format', function () {
 	[$statusCode, $output] = run('default', [
-		'path' => base_path('tests/Fixtures/with-fixable-issues'),
+		'path'     => base_path('tests/Fixtures/with-fixable-issues'),
 		'--preset' => 'psr12',
 		'--format' => 'gitlab',
 	]);

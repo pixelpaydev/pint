@@ -33,8 +33,7 @@ use SplFileInfo;
  * THE SOFTWARE.
  */
 
-class LaravelPhpdocOrderFixer extends AbstractFixer
-{
+class LaravelPhpdocOrderFixer extends AbstractFixer {
 	/**
 	 * {@inheritdoc}
 	 */

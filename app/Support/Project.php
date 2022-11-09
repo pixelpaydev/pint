@@ -2,8 +2,7 @@
 
 namespace App\Support;
 
-class Project
-{
+class Project {
 	/**
 	 * The project being analysed path.
 	 *

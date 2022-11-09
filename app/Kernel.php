@@ -6,8 +6,7 @@ use LaravelZero\Framework\Kernel as BaseKernel;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class Kernel extends BaseKernel
-{
+class Kernel extends BaseKernel {
 	/**
 	 * {@inheritdoc}
 	 */

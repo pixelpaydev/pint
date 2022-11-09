@@ -9,8 +9,7 @@ use App\Repositories\ConfigurationJsonRepository;
 use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
 
-class ConfigurationFactory
-{
+class ConfigurationFactory {
 	/**
 	 * The list of files to ignore.
 	 *
@@ -50,7 +49,8 @@ class ConfigurationFactory
 			->notName(static::$notName)
 			->exclude(static::$exclude)
 			->ignoreDotFiles(true)
-			->ignoreVCS(true);
+			->ignoreVCS(true)
+		;
 
 		foreach ($localConfiguration->finder() as $method => $arguments) {
 			if (! method_exists($finder, $method)) {
@@ -71,6 +71,7 @@ class ConfigurationFactory
 				new LaravelPhpdocOrderFixer(),
 				new LaravelPhpdocSeparationFixer(),
 				new LaravelPhpdocAlignmentFixer(),
-			]);
+			])
+		;
 	}
 }

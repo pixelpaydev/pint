@@ -7,8 +7,7 @@ use App\Support\Project;
 use Illuminate\Support\ServiceProvider;
 use Symfony\Component\Console\Input\InputInterface;
 
-class RepositoriesServiceProvider extends ServiceProvider
-{
+class RepositoriesServiceProvider extends ServiceProvider {
 	/**
 	 * Bootstrap any application services.
 	 *
