@@ -15,49 +15,49 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
 
 class ActionsServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
-    }
+	/**
+	 * Bootstrap any application services.
+	 *
+	 * @return void
+	 */
+	public function boot()
+	{
+		//
+	}
 
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        $this->app->singleton(FixCode::class, function () {
-            return new FixCode(
-                resolve(ErrorsManager::class),
-                resolve(EventDispatcher::class),
-                resolve(InputInterface::class),
-                resolve(OutputInterface::class),
-                new ProgressOutput(
-                    resolve(EventDispatcher::class),
-                    resolve(InputInterface::class),
-                    resolve(OutputInterface::class),
-                )
-            );
-        });
+	/**
+	 * Register any application services.
+	 *
+	 * @return void
+	 */
+	public function register()
+	{
+		$this->app->singleton(FixCode::class, function () {
+			return new FixCode(
+				resolve(ErrorsManager::class),
+				resolve(EventDispatcher::class),
+				resolve(InputInterface::class),
+				resolve(OutputInterface::class),
+				new ProgressOutput(
+					resolve(EventDispatcher::class),
+					resolve(InputInterface::class),
+					resolve(OutputInterface::class),
+				)
+			);
+		});
 
-        $this->app->singleton(ElaborateSummary::class, function () {
-            return new ElaborateSummary(
-                resolve(ErrorsManager::class),
-                resolve(InputInterface::class),
-                resolve(OutputInterface::class),
-                new SummaryOutput(
-                    resolve(ConfigurationJsonRepository::class),
-                    resolve(ErrorsManager::class),
-                    resolve(InputInterface::class),
-                    resolve(OutputInterface::class),
-                )
-            );
-        });
-    }
+		$this->app->singleton(ElaborateSummary::class, function () {
+			return new ElaborateSummary(
+				resolve(ErrorsManager::class),
+				resolve(InputInterface::class),
+				resolve(OutputInterface::class),
+				new SummaryOutput(
+					resolve(ConfigurationJsonRepository::class),
+					resolve(ErrorsManager::class),
+					resolve(InputInterface::class),
+					resolve(OutputInterface::class),
+				)
+			);
+		});
+	}
 }

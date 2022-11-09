@@ -8,29 +8,29 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
-    }
+	/**
+	 * Bootstrap any application services.
+	 *
+	 * @return void
+	 */
+	public function boot()
+	{
+		//
+	}
 
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        $this->app->singleton(ErrorsManager::class, function () {
-            return new ErrorsManager();
-        });
+	/**
+	 * Register any application services.
+	 *
+	 * @return void
+	 */
+	public function register()
+	{
+		$this->app->singleton(ErrorsManager::class, function () {
+			return new ErrorsManager();
+		});
 
-        $this->app->singleton(EventDispatcher::class, function () {
-            return new EventDispatcher();
-        });
-    }
+		$this->app->singleton(EventDispatcher::class, function () {
+			return new EventDispatcher();
+		});
+	}
 }

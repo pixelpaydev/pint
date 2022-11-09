@@ -32,7 +32,7 @@ uses(Tests\TestCase::class)->in('Feature');
 */
 
 expect()->extend('toBeOne', function () {
-    return $this->toBe(1);
+	return $this->toBe(1);
 });
 
 /*
@@ -55,31 +55,31 @@ expect()->extend('toBeOne', function () {
  */
 function run($command, $arguments)
 {
-    $arguments = array_merge([
-        '--test' => true,
-    ], $arguments);
+	$arguments = array_merge([
+		'--test' => true,
+	], $arguments);
 
-    if (isset($arguments['path'])) {
-        $arguments['--config'] = $arguments['path'].'/pint.json';
-    }
+	if (isset($arguments['path'])) {
+		$arguments['--config'] = $arguments['path'].'/pint.json';
+	}
 
-    $arguments['path'] = [$arguments['path']];
+	$arguments['path'] = [$arguments['path']];
 
-    $commandInstance = match ($command) {
-        'default' => resolve(DefaultCommand::class),
-    };
+	$commandInstance = match ($command) {
+		'default' => resolve(DefaultCommand::class),
+	};
 
-    $input = new ArrayInput($arguments, $commandInstance->getDefinition());
-    $output = new BufferedOutput(
-        BufferedOutput::VERBOSITY_VERBOSE,
-    );
+	$input = new ArrayInput($arguments, $commandInstance->getDefinition());
+	$output = new BufferedOutput(
+		BufferedOutput::VERBOSITY_VERBOSE,
+	);
 
-    app()->singleton(InputInterface::class, fn () => $input);
-    app()->singleton(OutputInterface::class, fn () => $output);
+	app()->singleton(InputInterface::class, fn () => $input);
+	app()->singleton(OutputInterface::class, fn () => $output);
 
-    $statusCode = resolve(Kernel::class)->call($command, $arguments, $output);
+	$statusCode = resolve(Kernel::class)->call($command, $arguments, $output);
 
-    $output = preg_replace('#\\x1b[[][^A-Za-z]*[A-Za-z]#', '', $output->fetch());
+	$output = preg_replace('#\\x1b[[][^A-Za-z]*[A-Za-z]#', '', $output->fetch());
 
-    return [$statusCode, $output];
+	return [$statusCode, $output];
 }

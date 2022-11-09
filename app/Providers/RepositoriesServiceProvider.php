@@ -9,30 +9,30 @@ use Symfony\Component\Console\Input\InputInterface;
 
 class RepositoriesServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
-    }
+	/**
+	 * Bootstrap any application services.
+	 *
+	 * @return void
+	 */
+	public function boot()
+	{
+		//
+	}
 
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        $this->app->singleton(ConfigurationJsonRepository::class, function () {
-            $input = resolve(InputInterface::class);
+	/**
+	 * Register any application services.
+	 *
+	 * @return void
+	 */
+	public function register()
+	{
+		$this->app->singleton(ConfigurationJsonRepository::class, function () {
+			$input = resolve(InputInterface::class);
 
-            return new ConfigurationJsonRepository(
-                $input->getOption('config') ?: Project::path().'/pint.json',
-                $input->getOption('preset'),
-            );
-        });
-    }
+			return new ConfigurationJsonRepository(
+				$input->getOption('config') ?: Project::path().'/pint.json',
+				$input->getOption('preset'),
+			);
+		});
+	}
 }
