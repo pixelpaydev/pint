@@ -195,10 +195,10 @@ return ConfigurationFactory::preset([
 	'Laravel/laravel_phpdoc_order'      => true,
 	'Laravel/laravel_phpdoc_separation' => true,
 
-    // Pixel
-    'php_unit_method_casing' => ['case' => 'snake_case'],
-    'simple_to_complex_string_variable' => true,
-    'explicit_string_variable' => true,
-    'explicit_indirect_variable' => true,
-    'return_assignment' => true,
+	// Pixel
+	'php_unit_method_casing'            => ['case' => 'snake_case'],
+	'simple_to_complex_string_variable' => true,
+	'explicit_string_variable'          => true,
+	'explicit_indirect_variable'        => true,
+	'return_assignment'                 => true,
 ]);

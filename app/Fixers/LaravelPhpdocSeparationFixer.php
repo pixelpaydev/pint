@@ -207,7 +207,6 @@ class LaravelPhpdocSeparationFixer extends AbstractFixer {
 
 		return collect($this->groups)
 			->filter(fn ($group) => in_array($firstName, $group, true) && in_array($secondName, $group, true))
-			->isNotEmpty()
-		;
+			->isNotEmpty();
 	}
 }

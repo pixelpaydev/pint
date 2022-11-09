@@ -39,8 +39,7 @@ class DefaultCommand extends Command {
 					new InputOption('test', '', InputOption::VALUE_NONE, 'Test for code style errors without fixing them'),
 					new InputOption('format', '', InputOption::VALUE_REQUIRED, 'The output format that should be used'),
 				],
-			)
-		;
+			);
 	}
 
 	/**

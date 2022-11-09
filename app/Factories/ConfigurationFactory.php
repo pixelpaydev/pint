@@ -49,8 +49,7 @@ class ConfigurationFactory {
 			->notName(static::$notName)
 			->exclude(static::$exclude)
 			->ignoreDotFiles(true)
-			->ignoreVCS(true)
-		;
+			->ignoreVCS(true);
 
 		foreach ($localConfiguration->finder() as $method => $arguments) {
 			if (! method_exists($finder, $method)) {
@@ -71,7 +70,6 @@ class ConfigurationFactory {
 				new LaravelPhpdocOrderFixer(),
 				new LaravelPhpdocSeparationFixer(),
 				new LaravelPhpdocAlignmentFixer(),
-			])
-		;
+			]);
 	}
 }

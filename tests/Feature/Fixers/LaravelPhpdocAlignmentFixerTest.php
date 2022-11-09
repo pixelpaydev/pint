@@ -18,6 +18,5 @@ it('fixes the code', function () {
     * @return string
     */
 EOF,
-		)
-	;
+		);
 });

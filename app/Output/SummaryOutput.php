@@ -96,8 +96,7 @@ class SummaryOutput {
 				$file,
 				$this->getSymbol(FixerFileProcessedEvent::STATUS_FIXED),
 				$information,
-			))
-		;
+			));
 
 		return $issues->merge(
 			collect(

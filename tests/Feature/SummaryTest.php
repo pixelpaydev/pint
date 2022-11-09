@@ -36,6 +36,5 @@ it('may pass', function () {
 
 	expect($statusCode)->toBe(0)
 		->and($output)
-		->toContain('PASS')
-	;
+		->toContain('PASS');
 });

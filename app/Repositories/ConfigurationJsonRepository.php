@@ -35,8 +35,7 @@ class ConfigurationJsonRepository {
 	{
 		return collect($this->get())
 			->filter(fn ($value, $key) => in_array($key, $this->finderOptions))
-			->toArray()
-		;
+			->toArray();
 	}
 
 	/**
